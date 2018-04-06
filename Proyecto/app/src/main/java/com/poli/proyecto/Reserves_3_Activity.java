@@ -19,11 +19,12 @@ public class Reserves_3_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_reserves_3_);
 
         restaurantList = new ArrayList<Restaurants>();
-
         recyclerView = findViewById(R.id.recicler);
+        recyclerView.setHasFixedSize(true);
+        Adapter = new Adapter(restaurantList);
 
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
+        RecyclerView.LayoutManager manejador = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(manejador);
         recyclerView.setAdapter(Adapter);
 
         fillUsers ();

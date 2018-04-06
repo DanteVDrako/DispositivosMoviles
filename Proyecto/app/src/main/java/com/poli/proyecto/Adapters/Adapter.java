@@ -4,11 +4,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.poli.proyecto.Class.Restaurants;
 import com.poli.proyecto.R;
-
 import java.util.ArrayList;
 
 /**
@@ -19,16 +19,26 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
 
     private ArrayList<Restaurants> res;
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder /*implements View.OnClickListener*/{
         public ImageView image;
         public TextView nameRes;
         public TextView add;
+        public Button reservar;
 
         public MyViewHolder(View v) {
             super(v);
             image = (ImageView) v.findViewById(R.id.imagenres);
             nameRes = (TextView) v.findViewById(R.id.nombre_restaurante);
             add = (TextView) v.findViewById(R.id.direccion_restaurante);
+            reservar = (Button)v.findViewById(R.id.reservar);
+            //reservar.setOnClickListener(new View.OnClickListener() {
+                //@Override
+                //public void onClick(View v) {
+                    //if(v.getId() == reservar.getId()){
+
+                    //}
+                //}
+           //});
         }
     }
 
@@ -38,10 +48,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
+        View vista = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.restaurants_card, parent, false);
 
-        return new MyViewHolder(itemView);
+        return new MyViewHolder(vista);
     }
 
     @Override
