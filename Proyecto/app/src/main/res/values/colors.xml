@@ -7,4 +7,5 @@
     <color name="TextButton">#000000</color>
     <color name="BackgroundScreen">#023859</color>
     <color name="TextFields">#ffffff</color>
+    <color name="TextTitleCard">#ab0d0d</color>
 </resources>
