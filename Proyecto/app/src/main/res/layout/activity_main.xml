@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/BackgroundScreen"
     tools:context="com.poli.proyecto.MainActivity">
 
     <ImageView
@@ -31,6 +32,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Usuario"
+        android:textColor="@color/TextFields"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,8 +51,9 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Contraseña"
-        android:textAlignment="center"
+        android:textColorHint="@color/TextFields"
         android:inputType="textPassword"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -66,8 +69,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Iniciar Sesión"
         android:background="@color/Botton"
+        android:textStyle="bold"
+        android:text="Iniciar Sesión"
         android:textColor="@color/TextButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
