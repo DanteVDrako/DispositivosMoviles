@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Map_2_Activity" />
+        <activity android:name=".Reserves_3_Activity" />
+        <activity android:name=".MyReserved_4_Activity"></activity>
     </application>
 
 </manifest>
