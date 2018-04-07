@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View v){
         if(v.getId() == a.getId()){
-            Intent ir = new Intent (MainActivity.this, Reserves_3_Activity.class);
+            Intent ir = new Intent (MainActivity.this, MapsActivity.class);
             startActivity(ir);
         }
     }
