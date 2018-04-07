@@ -1,83 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/BackgroundScreen"
+
     tools:context="com.poli.proyecto.MainActivity">
 
+
     <ImageView
-        android:id="@+id/Logo"
-        android:layout_width="223dp"
-        android:layout_height="212dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144"
-        app:srcCompat="@drawable/logo" />
+        android:layout_width="340dp"
+        android:layout_height="237dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/app_name"/>
 
     <EditText
-        android:id="@+id/username"
-        android:layout_width="226dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="184dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Usuario"
+        android:id="@+id/user"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textAlignment="center"
         android:textColor="@color/TextFields"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Logo"
-        app:layout_constraintVertical_bias="1.0" />
+        android:textColorHint="@color/TextFields" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="226dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
+        android:id="@+id/password"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:hint="Contraseña"
-        android:textColorHint="@color/TextFields"
         android:inputType="textPassword"
+        android:singleLine="false"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.081" />
-
+        android:textColor="@color/TextFields"
+        android:textColorHint="@color/TextFields" />
     <Button
         android:id="@+id/login"
-        android:layout_width="223dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/Botton"
-        android:textStyle="bold"
-        android:text="Iniciar Sesión"
-        android:textColor="@color/TextButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.18" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/Botton"
+        android:elevation="@android:dimen/notification_large_icon_height"
+        android:text="INCIAR SESIÓN"
+         />
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
