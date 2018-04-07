@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText user, password;
-        private Button iniciarSesion;
-        private String userName, sPassword;
+    private Button iniciarSesion;
+    private String userName, sPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,26 +21,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         user = (EditText) findViewById(R.id.user);
         password = (EditText) findViewById(R.id.password);
-        iniciarSesion = (Button)findViewById(R.id.login);
+        iniciarSesion = (Button) findViewById(R.id.login);
         iniciarSesion.setOnClickListener(this);
     }
 
-    public void onClick(View v){
+    public void onClick(View v) {
+
         userName = user.getText().toString();
         sPassword = password.getText().toString();
 
-        if ((userName.equals("admin")) && (sPassword.equals("123456")))
-        {
-            Intent inicio = new Intent (MainActivity.this, Map_2_Activity.class);
+        if ((userName.equals("admin")) && (sPassword.equals("123456"))) {
+            Intent inicio = new Intent(MainActivity.this, Map_2_Activity.class);
             startActivity(inicio);
+        } else {
+            Toast.makeText(iniciarSesion.getContext(), "Usuario Incorrecto", Toast.LENGTH_SHORT).show();
         }
 
-        else{
-            Toast.makeText(iniciarSesion.getContext(),"Usuario Incorrecto",Toast.LENGTH_SHORT).show();
-        }
 
-
-
-        }
     }
+}
 
