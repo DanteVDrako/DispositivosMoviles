@@ -8,4 +8,6 @@
     <color name="BackgroundScreen">#023859</color>
     <color name="TextFields">#ffffff</color>
     <color name="TextTitleCard">#ab0d0d</color>
+    <color name="HeaderMenu">#053cef</color>
+    <color name="BodyMenu">#c9c7c2</color>
 </resources>
