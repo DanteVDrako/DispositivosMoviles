@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sPassword = password.getText().toString();
 
         if ((userName.equals("admin")) && (sPassword.equals("123456"))) {
-            Intent inicio = new Intent(MainActivity.this, Map_2_Activity.class);
+            Intent inicio = new Intent(MainActivity.this, Reserves_3_Activity.class);
             startActivity(inicio);
         } else {
             Toast.makeText(iniciarSesion.getContext(), "Usuario Incorrecto", Toast.LENGTH_SHORT).show();
