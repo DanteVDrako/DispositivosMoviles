@@ -15,6 +15,9 @@
     <item android:id="@+id/settings"
         android:title="Configuraciones"/>
 
+    <item android:id="@+id/logout"
+        android:title="Cerrar Sesión"/>
+
 
 
 
