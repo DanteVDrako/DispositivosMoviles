@@ -12,10 +12,9 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:cardCornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
@@ -26,12 +25,13 @@
 
             <ImageView
                 android:id="@+id/imagenres"
-                android:layout_width="351dp"
-                android:layout_height="212dp"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.125"
@@ -86,17 +86,18 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:clickable="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.87">
+                app:layout_constraintVertical_bias="0.836">
 
                 <TextView
                     android:id="@+id/direccion_restaurante"
-                    android:layout_width="342dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginLeft="8dp"
@@ -106,7 +107,7 @@
                     android:text="Dirección"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -133,21 +134,13 @@
 
                 <Button
                     android:id="@+id/reservar"
-                    android:layout_width="300dp"
-                    android:layout_height="38dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@color/Botton"
                     android:text="Reservar"
                     android:textColor="@color/TextButton"
                     android:textSize="17dp"
                     android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/info"
-                    android:layout_width="51dp"
-                    android:layout_height="39dp"
-                    android:layout_weight="1"
-                    android:background="@color/Botton"
-                    android:drawableLeft="@mipmap/ic_info_white_24dp"/>
 
             </LinearLayout>
 

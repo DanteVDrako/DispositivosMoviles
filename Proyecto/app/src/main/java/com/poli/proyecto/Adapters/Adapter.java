@@ -1,5 +1,7 @@
 package com.poli.proyecto.Adapters;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +10,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.poli.proyecto.Class.Restaurants;
+import com.poli.proyecto.MyReserved_4_Activity;
 import com.poli.proyecto.R;
+import com.poli.proyecto.Reserves_3_Activity;
+
 import java.util.ArrayList;
 
 /**
@@ -24,27 +29,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         public TextView nameRes;
         public TextView add;
         public Button reservar;
-        public Button info;
 
         public MyViewHolder(View v) {
             super(v);
             image = (ImageView) v.findViewById(R.id.imagenres);
+            image.setOnClickListener(this);
             nameRes = (TextView) v.findViewById(R.id.nombre_restaurante);
             add = (TextView) v.findViewById(R.id.direccion_restaurante);
             reservar = (Button)v.findViewById(R.id.reservar);
             reservar.setOnClickListener(this);
-            info = (Button)v.findViewById(R.id.info);
-            info.setOnClickListener(this);
+
         }
         public void onClick(View v){
             if(v.getId() == reservar.getId()){
 
-            }else if(v.getId() == info.getId()){
+            }if(v.getId() == image.getId()){
 
             }
         }
     }
-
     public Adapter( ArrayList<Restaurants> res) {
         this.res = res;
     }
