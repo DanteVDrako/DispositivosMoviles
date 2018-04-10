@@ -19,11 +19,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
 
     private ArrayList<Restaurants> res;
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder /*implements View.OnClickListener*/{
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public ImageView image;
         public TextView nameRes;
         public TextView add;
         public Button reservar;
+        public Button info;
 
         public MyViewHolder(View v) {
             super(v);
@@ -31,14 +32,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
             nameRes = (TextView) v.findViewById(R.id.nombre_restaurante);
             add = (TextView) v.findViewById(R.id.direccion_restaurante);
             reservar = (Button)v.findViewById(R.id.reservar);
-            //reservar.setOnClickListener(new View.OnClickListener() {
-                //@Override
-                //public void onClick(View v) {
-                    //if(v.getId() == reservar.getId()){
+            reservar.setOnClickListener(this);
+            info = (Button)v.findViewById(R.id.info);
+            info.setOnClickListener(this);
+        }
+        public void onClick(View v){
+            if(v.getId() == reservar.getId()){
 
-                    //}
-                //}
-           //});
+            }else if(v.getId() == info.getId()){
+
+            }
         }
     }
 
