@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Reserves_3_Activity">
+
+    <group
+        android:id="@+id/menu_user">
+        <item
+            android:id="@+id/user_profile"
+            android:icon="@mipmap/ic_person_white_36dp"
+            android:title="Perfil" />
+
+        <item android:id="@+id/my_reserves"
+            android:icon="@mipmap/ic_playlist_add_check_white_24dp"
+            android:title="Mis Reservas"/>
+
+        <item android:id="@+id/restaurant_list"
+            android:icon="@mipmap/ic_restaurant_menu_white_24dp"
+            android:title="Lista de restaurantes"/>
+
+    </group>
+
+    <group
+        android:id="@+id/menu_app">
+        <item android:id="@+id/settings"
+            android:icon="@mipmap/ic_settings_white_24dp"
+            android:title="Configuraciones"/>
+
+        <item
+            android:id="@+id/logout"
+            android:icon="@mipmap/ic_close_white_24dp"
+            android:title="Cerrar Sesión" />
+
+    </group>
+
+
+
+
+</menu>

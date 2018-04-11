@@ -27,11 +27,11 @@ public class Reserves_3_Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(manejador);
         recyclerView.setAdapter(Adapter);
 
-        fillUsers ();
+        fillRestaurants ();
 
 
     }
-    public void fillUsers (){
+    public void fillRestaurants (){
         Restaurants r0 = new Restaurants("Andres Carne De Res", "Calle 82 No 12-21", R.drawable.andres_carne_res);
         restaurantList.add(r0);
         Restaurants r1 = new Restaurants("Armadillo", "C.C Santafé Local 395", R.drawable.armadillo);
