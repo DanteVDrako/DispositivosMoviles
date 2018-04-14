@@ -2,6 +2,7 @@ package com.poli.proyecto.Adapters;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         public TextView nameRes;
         public TextView add;
         public Button reservar;
+        public ConstraintLayout a3;
 
         public MyViewHolder(View v) {
             super(v);
@@ -38,12 +40,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
             add = (TextView) v.findViewById(R.id.direccion_restaurante);
             reservar = (Button)v.findViewById(R.id.reservar);
             reservar.setOnClickListener(this);
+            a3 = (ConstraintLayout) v.findViewById(R.id.cards);
+            a3.setOnClickListener(this);
 
         }
         public void onClick(View v){
             if(v.getId() == reservar.getId()){
 
-            }if(v.getId() == image.getId()){
+            }if(v.getId() == a3.getId()){
 
             }
         }
