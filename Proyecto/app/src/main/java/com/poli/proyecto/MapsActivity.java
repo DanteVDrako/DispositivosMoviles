@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -145,7 +146,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         @Override
         public void onLocationChanged(Location location) {
 
-            ActualizarUbicacion(location);
+            //ActualizarUbicacion(location);
             setLocation(location);
         }
 
@@ -187,7 +188,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void Mensaje() {
         Toast toast = Toast.makeText(this, mensaje1, Toast.LENGTH_LONG);
-        //toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toast.show();
     }
 
