@@ -62,6 +62,9 @@ public class Reserves_3_Activity extends AppCompatActivity {
         restaurantList.add(r13);
         Restaurants r14 = new Restaurants("Vamos Pal Monte", "Km 5 vía Suesca", R.drawable.andres_carne_res);
         restaurantList.add(r14);
+
+        Restaurants r15 = new Restaurants("Vamos Pal Monte", "Km 5 vía Suesca", R.drawable.andres_carne_res);
+        restaurantList.add(r15);
         }
 }
 
