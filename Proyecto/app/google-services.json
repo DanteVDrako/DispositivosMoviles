@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "744500608571",
+    "firebase_url": "https://proyecto-moviles-9acb9.firebaseio.com",
+    "project_id": "proyecto-moviles-9acb9",
+    "storage_bucket": "proyecto-moviles-9acb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744500608571:android:9b9754eb2736ac29",
+        "android_client_info": {
+          "package_name": "com.poli.proyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744500608571-o4pl619donfv4sbdlm8pg7uqgqlsvfks.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.poli.proyecto",
+            "certificate_hash": "ab53188a1338cdfbc866e97946454d3a5afccfd0"
+          }
+        },
+        {
+          "client_id": "744500608571-gl250l0dr12ge874jne9mmt17d39esl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlVstXELXXP13uq2Siw2Ur4XtT8DeP38M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744500608571-gl250l0dr12ge874jne9mmt17d39esl9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

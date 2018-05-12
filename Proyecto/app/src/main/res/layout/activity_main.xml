@@ -22,8 +22,8 @@
         android:layout_width="169dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-        android:hint="Usuario"
+        android:layout_marginTop="20dp"
+        android:hint="Correo electrónico"
         android:inputType="textPersonName"
         android:singleLine="false"
         android:textAlignment="center"
@@ -42,6 +42,7 @@
         android:textAlignment="center"
         android:textColor="@color/TextFields"
         android:textColorHint="@color/TextFields" />
+
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
@@ -50,7 +51,18 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/Botton"
         android:elevation="@android:dimen/notification_large_icon_height"
-        android:text="INCIAR SESIÓN"
+        android:onClick="onClick"
+        android:text="INCIAR SESIÓN" />
+
+    <Button
+        android:id="@+id/crearUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/Botton"
+        android:elevation="@android:dimen/notification_large_icon_height"
+        android:text="CREAR USUARIO"
          />
 
 
