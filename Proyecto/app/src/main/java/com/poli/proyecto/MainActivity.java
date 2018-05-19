@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText user, password;
-    private Button iniciarSesion;
+    private Button iniciarSesion,crearUsuario;
     private String userName, sPassword;
     FirebaseAuth miAuth;
     FirebaseAuth.AuthStateListener listener;
@@ -28,13 +28,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         user = (EditText) findViewById(R.id.user);
         password = (EditText) findViewById(R.id.password);
         iniciarSesion = (Button) findViewById(R.id.login);
+        crearUsuario = (Button) findViewById(R.id.crearUsuario);
         iniciarSesion.setOnClickListener(this);
+        crearUsuario.setOnClickListener(this);
         miAuth = FirebaseAuth.getInstance();
         listener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -51,9 +54,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
     }
 
+
     public void onClick(View v) {
 
         ingresar();
+        crearUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent crearUser = new Intent(MainActivity.this, CrearUser.class);
+                startActivity(crearUser);
+            }
+        });
 
 
     }
@@ -84,7 +97,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    @Override
+
+
+
+        @Override
 
     protected  void onStart() {
         miAuth.addAuthStateListener(listener);

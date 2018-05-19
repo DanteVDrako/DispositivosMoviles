@@ -62,8 +62,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/Botton"
         android:elevation="@android:dimen/notification_large_icon_height"
-        android:text="CREAR USUARIO"
-         />
+        android:text="CREAR USUARIO" />
 
 
 </LinearLayout>
