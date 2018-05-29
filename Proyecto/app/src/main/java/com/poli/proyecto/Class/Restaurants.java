@@ -11,19 +11,23 @@ public class Restaurants {
 
     private String name;
     private String address;
-    private int imagen;
+    private String imagen;
 
-    public Restaurants(String name, String address, int a) {
+    public Restaurants(){
+
+    }
+
+    public Restaurants(String name, String address, String a) {
         this.imagen = a;
         this.name = name;
         this.address = address;
     }
 
-    public int getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(int imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 

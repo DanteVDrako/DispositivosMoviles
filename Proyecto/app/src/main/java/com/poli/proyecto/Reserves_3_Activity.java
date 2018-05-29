@@ -34,6 +34,11 @@ public class Reserves_3_Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(manejador);
         recyclerView.setAdapter(Adapter);
 
+        //fillRestaurants ();
+        showRestaurants();
+
+    }
+    public void showRestaurants(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference("Restaurants");
         reference.addValueEventListener(new ValueEventListener() {
@@ -54,11 +59,10 @@ public class Reserves_3_Activity extends AppCompatActivity {
 
             }
         });
-
-        //fillRestaurants ();
-
-
     }
+
+
+
     public void fillRestaurants (){
         Restaurants r0 = new Restaurants("Andres Carne De Res", "Calle 82 No 12-21", R.drawable.andres_carne_res);
         restaurantList.add(r0);
