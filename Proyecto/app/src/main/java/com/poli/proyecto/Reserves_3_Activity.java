@@ -49,7 +49,7 @@ public class Reserves_3_Activity extends AppCompatActivity {
                         dataSnapshot.getChildren()) {
                     Restaurants rs = a.getValue(Restaurants.class);
                     restaurantList.add(rs);
-                    Log.i("Dato: ",rs.getName());
+                    Log.i("Dato: ",rs.getImagen());
                 }
                 Adapter.notifyDataSetChanged();
             }
@@ -64,7 +64,7 @@ public class Reserves_3_Activity extends AppCompatActivity {
 
 
     public void fillRestaurants (){
-        Restaurants r0 = new Restaurants("Andres Carne De Res", "Calle 82 No 12-21", R.drawable.andres_carne_res);
+        /*Restaurants r0 = new Restaurants("Andres Carne De Res", "Calle 82 No 12-21", R.drawable.andres_carne_res);
         restaurantList.add(r0);
         Restaurants r1 = new Restaurants("Armadillo", "C.C Santafé Local 395", R.drawable.armadillo);
         restaurantList.add(r1);
@@ -96,7 +96,7 @@ public class Reserves_3_Activity extends AppCompatActivity {
         restaurantList.add(r14);
 
         Restaurants r15 = new Restaurants("Vamos Pal Monte", "Km 5 vía Suesca", R.drawable.andres_carne_res);
-        restaurantList.add(r15);
+        restaurantList.add(r15);*/
         }
 }
 
