@@ -1,6 +1,7 @@
 package com.poli.proyecto.Adapters;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,7 +16,9 @@ import android.widget.TextView;
 import com.poli.proyecto.Class.Restaurants;
 import com.poli.proyecto.MyReserved_4_Activity;
 import com.poli.proyecto.R;
+import com.poli.proyecto.Reserves3Activity;
 import com.poli.proyecto.Reserves_3_Activity;
+import com.poli.proyecto.restaurants_info;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,6 +41,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         public TextView add;
         public Button reservar;
         public ConstraintLayout a3;
+        public Context context;
+        public String urlImage = "";
+        public String desc = "";
 
         public MyViewHolder(View v) {
             super(v);
@@ -46,16 +52,26 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
             nameRes = (TextView) v.findViewById(R.id.nombre_restaurante);
             add = (TextView) v.findViewById(R.id.direccion_restaurante);
             reservar = (Button)v.findViewById(R.id.reservar);
-            reservar.setOnClickListener(this);
             a3 = (ConstraintLayout) v.findViewById(R.id.cards);
-            a3.setOnClickListener(this);
+            context = v.getContext();
 
+        }
+        public void setOnClickListeners(){
+            reservar.setOnClickListener(this);
+            a3.setOnClickListener(this);
         }
         public void onClick(View v){
             if(v.getId() == reservar.getId()){
-
+                Intent reservar = new Intent(context, Reserves3Activity.class);
+                reservar.putExtra("Nombre", nameRes.getText());
+                context.startActivity(reservar);
             }if(v.getId() == a3.getId()){
-
+                Intent info = new Intent(context, restaurants_info.class);
+                info.putExtra("Nombre", nameRes.getText());
+                info.putExtra("Direccion", add.getText());
+                info.putExtra("Imagen", urlImage);
+                info.putExtra("Descripcion", desc);
+                context.startActivity(info);
             }
         }
     }
@@ -76,6 +92,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         final Restaurants r = res.get(position);
         holder.nameRes.setText(r.getName());
         holder.add.setText(r.getAddress());
+        holder.setOnClickListeners();
+        holder.urlImage = r.getImagen();
+        holder.desc = r.getDescription();
 
         Thread t2 = new Thread(new Runnable() {
             @Override

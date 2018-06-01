@@ -10,4 +10,5 @@
     <color name="TextTitleCard">#ab0d0d</color>
     <color name="HeaderMenu">#053cef</color>
     <color name="BodyMenu">#c9c7c2</color>
+    <color name="Description">#dfe6ed</color>
 </resources>
