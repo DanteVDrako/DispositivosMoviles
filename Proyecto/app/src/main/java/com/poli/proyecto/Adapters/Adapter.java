@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +69,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
             }if(v.getId() == a3.getId()){
                 Intent info = new Intent(context, restaurants_info.class);
                 info.putExtra("Nombre", nameRes.getText());
-                info.putExtra("Direccion", add.getText());
+                info.putExtra("Dir", add.getText());
                 info.putExtra("Imagen", urlImage);
                 info.putExtra("Descripcion", desc);
                 context.startActivity(info);

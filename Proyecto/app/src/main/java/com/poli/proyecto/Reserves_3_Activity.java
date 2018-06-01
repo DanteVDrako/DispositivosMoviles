@@ -49,7 +49,6 @@ public class Reserves_3_Activity extends AppCompatActivity {
                         dataSnapshot.getChildren()) {
                     Restaurants rs = a.getValue(Restaurants.class);
                     restaurantList.add(rs);
-                    Log.i("Dato: ",rs.getImagen());
                 }
                 Adapter.notifyDataSetChanged();
             }

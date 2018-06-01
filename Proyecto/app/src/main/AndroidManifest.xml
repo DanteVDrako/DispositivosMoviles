@@ -45,6 +45,8 @@
         </activity>
         <activity android:name=".Reserves_3_Activity" />
         <activity android:name=".MyReserved_4_Activity" />
+        <activity android:name=".Reserves3Activity"/>
+        <activity android:name=".restaurants_info"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
