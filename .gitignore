@@ -1,11 +1,2 @@
 
-*.gradle
-Proyecto/app/build.gradle
-Proyecto/app/google-services.json
-Proyecto/app/src/main/java/com/poli/proyecto/MainActivity.java
-Proyecto/app/src/main/java/com/poli/proyecto/Reserves3Activity.java
-Proyecto/app/src/main/java/com/poli/proyecto/Reserves_3_Activity.java
-Proyecto/app/src/main/java/com/poli/proyecto/User.java
-Proyecto/app/src/main/res/layout/activity_main.xml
-Proyecto/app/src/main/res/layout/activity_reserves3.xml
-Proyecto/build.gradle
+Proyecto/app/src/main/java/com/poli/proyecto/Class/Reserva.java
