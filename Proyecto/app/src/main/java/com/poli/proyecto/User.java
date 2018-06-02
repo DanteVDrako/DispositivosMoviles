@@ -6,7 +6,9 @@ package com.poli.proyecto;
 
 public class User {
 
+    private String key;
     private String nombre;
+    private String apellido;
     private String correo;
     private String contrasena;
 
@@ -15,10 +17,27 @@ public class User {
 
     }
 
-    public User(String nombre, String correo, String contrasena) {
+    public User( String nombre, String apellido, String correo, String contrasena) {
         this.nombre = nombre;
+        this.apellido = apellido;
         this.correo = correo;
         this.contrasena = contrasena;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getNombre() {

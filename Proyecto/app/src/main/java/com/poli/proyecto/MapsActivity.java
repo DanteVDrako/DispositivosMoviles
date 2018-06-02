@@ -5,6 +5,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -22,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -43,6 +45,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ActionBarDrawerToggle icon;
     private GoogleMap mMap;
     private Marker marcador;
+   private TextView NombreApellido;
+    private String NomApe;
     double lat = 0.0;
     double lng = 0.0;
     String mensaje1;
@@ -63,13 +67,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView nv = (NavigationView)findViewById(R.id.nav);
         nv.setNavigationItemSelectedListener(this);
-
-
+        NombreApellido = (TextView) findViewById(R.id.NombreApellido);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Bundle extras = getIntent().getExtras();
+        NomApe = extras.getString("user");
+        NombreApellido.setText(NomApe);
     }
 
 
@@ -88,6 +95,56 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         miUbicacion();
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(LatLng latLng) {
+                mMap.addMarker(new MarkerOptions()
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurantmarc)).title("Andres Carne De Res")
+                        .anchor(0.0f, 0.5f)
+                        .position(latLng));
+
+                    // Add a marker in Sydney and move the camera
+
+
+            }
+        });
+
+        LatLng sydney= new LatLng(4.7109886, -74.072092);
+        mMap.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurantmarc)).title("Andres Carne De Res")
+                .anchor(0.0f, 2.0f)
+                .position(sydney));
+        LatLng armadillo= new LatLng(4.7109886, -74.072092);
+        mMap.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurantmarc)).title("Armadillo")
+                .anchor(0.0f, 0.2f)
+                .position(armadillo));
+        LatLng boca= new LatLng(4.7109886, -74.072092);
+        mMap.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurantmarc)).title("Boca")
+                .anchor(0.3f, 3.0f)
+                .position(boca));
+        LatLng casavieja= new LatLng(4.7109886, -74.072092);
+        mMap.addMarker(new MarkerOptions()
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurantmarc)).title("Casa Vieja")
+                .anchor(2.0f, 3.0f)
+                .position(casavieja));
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                Intent inicio = new Intent(MapsActivity.this, Reserves_3_Activity.class);
+
+                startActivity(inicio);
+                return false;
+            }
+        });
+
+
+
+
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
     }
 
     //activar los servicios del gps cuando esten apagados
@@ -183,6 +240,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             ActualizarUbicacion(location);
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,1200,0,locListener);
         }
+
+
 
     }
 

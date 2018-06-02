@@ -1,6 +1,7 @@
 package com.poli.proyecto;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -18,9 +19,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CrearUser extends AppCompatActivity {
-    private EditText editMail, editCont;
+    private EditText editMail, editCont,editNombre,editApellido;
     private Button ingresarusuario;
    private ProgressBar PbProgress;
     FirebaseAuth miAuth;
@@ -35,6 +38,8 @@ public class CrearUser extends AppCompatActivity {
         ingresarusuario = (Button) findViewById(R.id.ingresarUsuario);
         editMail = (EditText) findViewById(R.id.editMail);
         editCont = (EditText) findViewById(R.id.editCont);
+        editNombre = (EditText) findViewById(R.id.editNombre);
+        editApellido = (EditText) findViewById(R.id.editApellido);
         miAuth = FirebaseAuth.getInstance();
         listener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -55,6 +60,9 @@ public class CrearUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarUsuario();
+                insertUsuario();
+                Intent menu = new Intent(CrearUser.this, MainActivity.class);
+                startActivity(menu);
             }
         });
 
@@ -88,6 +96,23 @@ public class CrearUser extends AppCompatActivity {
 
 
 
+
+
+    }
+    public void insertUsuario() {
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Users");
+        String key = myRef.push().getKey();
+
+        String valorNombre = editNombre.getText().toString();
+        String ValorApe = editApellido.getText().toString();
+        String valorCorreo = editMail.getText().toString();
+        String valorContra= editCont.getText().toString();
+
+        User nuevoUser = new User(valorNombre, ValorApe, valorCorreo, valorContra);
+        myRef.child(key).setValue(nuevoUser);
+        //Toast.makeText(getApplicationContext(),"Usuario ingresado", Toast.LENGTH_SHORT).show();
     }
 
 

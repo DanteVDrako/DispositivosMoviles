@@ -21,10 +21,50 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/nombreUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Nombre"
+        android:textColor="?android:attr/colorBackground"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ingrese su Nombre"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textColor="@color/TextFields"
+        android:textColorHint="@color/TextFields" />
+    <TextView
+        android:id="@+id/apellidoUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Apellido"
+        android:textColor="?android:attr/colorBackground"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/editApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ingrese su Apellido"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textColor="@color/TextFields"
+        android:textColorHint="@color/TextFields" />
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="5dp"
         android:text="Correo"
         android:textColor="?android:attr/colorBackground"
         android:textSize="30sp"

@@ -28,6 +28,7 @@
         android:singleLine="false"
         android:textAlignment="center"
         android:textColor="@color/TextFields"
+
         android:textColorHint="@color/TextFields" />
 
     <EditText

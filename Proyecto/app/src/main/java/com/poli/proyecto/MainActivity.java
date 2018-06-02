@@ -1,5 +1,6 @@
 package com.poli.proyecto;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,9 +20,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Context context;
+
 
     private EditText user, password;
     private Button iniciarSesion,crearUsuario;
+
     private String userName, sPassword;
     FirebaseAuth miAuth;
     FirebaseAuth.AuthStateListener listener;
@@ -32,10 +37,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         user = (EditText) findViewById(R.id.user);
         password = (EditText) findViewById(R.id.password);
         iniciarSesion = (Button) findViewById(R.id.login);
         crearUsuario = (Button) findViewById(R.id.crearUsuario);
+
         iniciarSesion.setOnClickListener(this);
         crearUsuario.setOnClickListener(this);
         miAuth = FirebaseAuth.getInstance();
@@ -57,7 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View v) {
 
+
         ingresar();
+
+
         crearUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void ingresar() {
-        String userIngreso = user.getText().toString();
+        final String userIngreso = user.getText().toString();
         String contrasena = password.getText().toString();
 
         if(userIngreso.isEmpty()&&contrasena.isEmpty()){
@@ -83,13 +93,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(getApplicationContext(), "Login Correcto", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Bienvenido "+ userIngreso, Toast.LENGTH_LONG).show();
                         Intent inicio = new Intent(MainActivity.this, MapsActivity.class);
+                        inicio.putExtra("user",userIngreso);
                         startActivity(inicio);
+
                     } else {
                         Toast.makeText(getApplicationContext(), "Usuario Incorrecto", Toast.LENGTH_SHORT).show();
 
                     }
+
                 }
             });
 
@@ -114,6 +127,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(listener!=null){
             miAuth.removeAuthStateListener(listener);
         }
+    }
+
+    public void insertUsuario(View v){
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Users");
+        String key = myRef.push().getKey();
+
     }
 }
 

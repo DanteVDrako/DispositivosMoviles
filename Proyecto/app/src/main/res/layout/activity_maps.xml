@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.poli.proyecto.Map_2_Activity"
+    tools:context="com.poli.proyecto.MapsActivity"
     android:background="@color/BackgroundScreen"
     android:id="@+id/draw">
+
+    <include layout="@layout/menu_header"/>
 
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
