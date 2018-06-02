@@ -274,6 +274,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         if(id == R.id.user_profile){
             return true;
         }else if(id == R.id.my_reserves){
+            Intent reservar= new Intent(MapsActivity.this, Reserves3Activity.class);
+            startActivity(reservar);
             return true;
         }else if(id == R.id.restaurant_list){
             executeRestaurantList(null);
@@ -281,6 +283,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }else if(id == R.id.settings){
             return true;
         }else if(id == R.id.logout){
+            Intent cerrar = new Intent(MapsActivity.this, MainActivity.class);
+            startActivity(cerrar);
             return true;
         }
         return false;
