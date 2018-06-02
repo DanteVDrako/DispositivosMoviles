@@ -50,6 +50,11 @@ public class Reserves3Activity extends AppCompatActivity implements View.OnClick
         btnFecha.setOnClickListener(this);
         btnHora.setOnClickListener(this);
         ((SeekBar)findViewById(R.id.barraNumero)).setOnSeekBarChangeListener(this);
+
+        Bundle extras = getIntent().getExtras();
+        String nombreRestaurante = extras.getString("Nombre");
+
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

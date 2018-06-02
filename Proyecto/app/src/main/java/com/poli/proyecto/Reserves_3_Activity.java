@@ -4,6 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.poli.proyecto.Class.Restaurants;
 import com.poli.proyecto.Adapters.Adapter;
 import java.util.ArrayList;
@@ -27,12 +34,36 @@ public class Reserves_3_Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(manejador);
         recyclerView.setAdapter(Adapter);
 
-        fillRestaurants ();
-
+        //fillRestaurants ();
+        showRestaurants();
 
     }
+    public void showRestaurants(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference("Restaurants");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                restaurantList.removeAll(restaurantList);
+                for (DataSnapshot a :
+                        dataSnapshot.getChildren()) {
+                    Restaurants rs = a.getValue(Restaurants.class);
+                    restaurantList.add(rs);
+                }
+                Adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
+
     public void fillRestaurants (){
-        Restaurants r0 = new Restaurants("Andres Carne De Res", "Calle 82 No 12-21", R.drawable.andres_carne_res);
+        /*Restaurants r0 = new Restaurants("Andres Carne De Res", "Calle 82 No 12-21", R.drawable.andres_carne_res);
         restaurantList.add(r0);
         Restaurants r1 = new Restaurants("Armadillo", "C.C Santafé Local 395", R.drawable.armadillo);
         restaurantList.add(r1);
@@ -64,7 +95,7 @@ public class Reserves_3_Activity extends AppCompatActivity {
         restaurantList.add(r14);
 
         Restaurants r15 = new Restaurants("Vamos Pal Monte", "Km 5 vía Suesca", R.drawable.andres_carne_res);
-        restaurantList.add(r15);
+        restaurantList.add(r15);*/
         }
 }
 
